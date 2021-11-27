@@ -1,0 +1,24 @@
+@model ASPDotnetCoreMVC.Models.Company
+
+    <h2>Company</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" asp-action="save">
+                @Html.HiddenFor(m => m.CompanyId) 
+                 <div class="form-group">
+                     @Html.LabelFor(m => m.Name , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Name, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Name,"" ,new{ @class="text-danger"})
+                 </div>   
+                 <div class="form-group">
+                     @Html.LabelFor(m => m.Adress , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Adress, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Adress,"" , new {@class="text-danger"})
+                 </div>
+                 <div class="text-right">
+                     <a asp-controller="Company" class="btn btn-outline-info" asp-action="Index">Return</a>
+                     <button type="submit" class="btn btn-outline-primary">save</button>
+                 </div>
+            </form>
+        </div>
+    </div>

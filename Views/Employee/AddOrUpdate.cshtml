@@ -1,0 +1,44 @@
+@model ASPDotnetCoreMVC.Models.Employee
+
+    <h2>Employee</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" asp-action="save">
+                @Html.HiddenFor(m => m.EmployeeId) 
+                 <div class="form-group">
+                     @Html.LabelFor(m => m.Name , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Name, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Name,"" ,new{ @class="text-danger"})
+                 </div>   
+                 <div class="form-group">
+                     @Html.LabelFor(m => m.Surname , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Surname, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Surname,"" , new {@class="text-danger"})
+                 </div>
+                   <div class="form-group">
+                     @Html.LabelFor(m => m.Adress , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Adress, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Adress,"" , new {@class="text-danger"})
+                 </div>
+                   <div class="form-group">
+                     @Html.LabelFor(m => m.Gender , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Gender, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Gender,"" , new {@class="text-danger"})
+                 </div>
+                   <div class="form-group">
+                     @Html.LabelFor(m => m.Email , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.Email, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.Email,"" , new {@class="text-danger"})
+                 </div>
+                   <div class="form-group">
+                     @Html.LabelFor(m => m.CompanyId , new {@class="control-label"})
+                     @Html.TextBoxFor(m =>m.CompanyId, new {@class="form-control"})
+                     @Html.ValidationMessageFor(m =>m.CompanyId,"" , new {@class="text-danger"})
+                 </div>
+                 <div class="text-right">
+                     <a asp-controller="Employee" class="btn btn-outline-info" asp-action="Index">Return</a>
+                     <button type="submit" class="btn btn-outline-primary">Save</button>
+                 </div>
+            </form>
+        </div>
+    </div>
